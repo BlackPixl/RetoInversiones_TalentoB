@@ -17,9 +17,9 @@ def load_csv_to_db(csv_file, table_name):
     df.to_sql(table_name, engine, if_exists='append', index=False)
 
 # Load CSV files into respective tables
-load_csv_to_db('./Data/catalogo_activos.csv', 'catalogo_activos')
-load_csv_to_db('./Data/catalogo_banca.csv', 'catalogo_banca')
-load_csv_to_db('./Data/cat_perfil_riesgo.csv', 'cat_perfil_riesgo')
-load_csv_to_db('./Data/historico_aba_macroactivos.csv', 'historico_aba_macroactivos')
+#load_csv_to_db('./Data/catalogo_activos.csv', 'catalogo_activos')
+#load_csv_to_db('./Data/catalogo_banca.csv', 'catalogo_banca')
+#load_csv_to_db('./Data/cat_perfil_riesgo.csv', 'cat_perfil_riesgo')
+load_csv_to_db('./Data/historico_aba_macroactivos.csv', 'staging_hist_aba_macroactivos')
 
 print("Data loaded successfully!")
