@@ -27,3 +27,13 @@ DETAIL:  Key (cod_activo)=(1000) already exists.
 2024-05-20 09:06:51,541 - INFO - Ended script for table creation
 2024-05-20 09:06:55,623 - INFO - Data loading successful
 2024-05-20 09:06:55,624 - INFO - Ended script for data loading
+2024-05-20 09:18:13,794 - INFO - Started script for table creation
+2024-05-20 09:18:14,208 - INFO - Execution successful
+2024-05-20 09:18:14,209 - INFO - Ended script for table creation
+2024-05-20 09:18:18,147 - INFO - Data loading successful
+2024-05-20 09:18:18,147 - INFO - Ended script for data loading
+2024-05-20 09:19:28,702 - INFO - Started script for table creation
+2024-05-20 09:19:29,124 - INFO - Execution successful
+2024-05-20 09:19:29,125 - INFO - Ended script for table creation
+2024-05-20 09:19:33,050 - INFO - Data loading successful
+2024-05-20 09:19:33,051 - INFO - Ended script for data loading

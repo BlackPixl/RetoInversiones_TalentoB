@@ -70,11 +70,11 @@ def update_graphs(selected_client):
 
         # Gráfica de pastel para la distribución de aba en macroactivo.
         pie_chart_macroactivos = px.pie(last_date_df, names='macroactivo', values='aba',
-                           title=f'Distribución de macroactivos para {last_date.strftime("%Y-%m")}')
+                           title=f'Distribución del portafolio por macroactivos para {last_date.strftime("%Y-%m")}')
                            
         # Gráfica de pasteñ distribución de aba en activos.
         pie_chart_activos = px.pie(last_date_df, names='activo', values='aba',
-                           title=f'Distribución de activos para {last_date.strftime("%Y-%m")}')
+                           title=f'Distribución del portafolio por activos para {last_date.strftime("%Y-%m")}')
 
         # Gráfica de pastel para la distribución de aba en banca.
         banca_pie_chart = px.pie(last_date_df, names='banca', values='aba',
