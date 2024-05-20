@@ -87,7 +87,7 @@ def update_graphs(selected_client):
         # Gráfica de líneas con el total de aba de todos los clientes según el macroactivo.
         total_df = df.groupby(['date', 'macroactivo'], as_index=False)['aba'].sum()
         line_chart = px.line(total_df, x='date', y='aba', color='macroactivo',
-                             title='Evolución del total de aba de todos los clientes a través del tiempo')
+                             title='Evolución del total del macroactivo de todos los clientes a través del tiempo')
         
         # Gráfica de barras apiladas para la distribución de macroactivos por banca.
         macroactivo_banca_df = last_date_df.groupby(['banca', 'macroactivo'], as_index=False)['aba'].sum()
@@ -97,7 +97,7 @@ def update_graphs(selected_client):
         # Gráfica de barras apiladas para la dostrobucion de macroactivos por riesgo.
         macroactivo_riesgo_df = last_date_df.groupby(['perfil_riesgo', 'macroactivo'], as_index=False)['aba'].sum()
         bar_chart_risk = px.bar(macroactivo_riesgo_df, x='perfil_riesgo', y='aba', color='macroactivo', 
-                           title='Distribución de macroactivos por banca', barmode='stack')
+                           title='Distribución de macroactivos por riesgo', barmode='stack')
 
     else:
         # Filtrar los datos para el cliente seleccionado.
