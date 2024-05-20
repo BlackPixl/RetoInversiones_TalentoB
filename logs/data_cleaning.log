@@ -1,0 +1,9 @@
+2024-05-20 07:50:01,007 - INFO - Started script for data cleaning
+2024-05-20 07:50:02,564 - INFO - Execution successful
+2024-05-20 07:50:02,567 - INFO - Ended script for data cleaning
+2024-05-20 07:50:34,217 - INFO - Started script for data cleaning
+2024-05-20 07:50:35,727 - ERROR - Error executing script: name 'a' is not defined
+2024-05-20 07:50:35,742 - INFO - Ended script for data cleaning
+2024-05-20 07:51:35,246 - INFO - Started script for data cleaning
+2024-05-20 07:51:36,637 - INFO - Execution successful
+2024-05-20 07:51:36,653 - INFO - Ended script for data cleaning

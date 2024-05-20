@@ -1,0 +1,9 @@
+2024-05-20 08:01:08,596 - ERROR - Error executing script: [Errno 2] No such file or directory: './Data/catalogo_activos.csv'
+2024-05-20 08:01:08,597 - INFO - Ended script for data loading
+2024-05-20 08:02:07,950 - ERROR - Error executing script: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "catalogo_activos_pkey"
+DETAIL:  Key (cod_activo)=(1000) already exists.
+
+[SQL: INSERT INTO catalogo_activos (activo, cod_activo) VALUES (%(activo__0)s, %(cod_activo__0)s), (%(activo__1)s, %(cod_activo__1)s), (%(activo__2)s, %(cod_activo__2)s), (%(activo__3)s, %(cod_activo__3)s), (%(activo__4)s, %(cod_activo__4)s), (%(activo__5) ... 407 characters truncated ... 6)s, %(cod_activo__16)s), (%(activo__17)s, %(cod_activo__17)s), (%(activo__18)s, %(cod_activo__18)s)]
+[parameters: {'cod_activo__0': 1000, 'activo__0': 'CDT BANCOLOMBIA B360', 'cod_activo__1': 1001, 'activo__1': 'CDT TUYA TF B360', 'cod_activo__2': 1002, 'activo__2': 'CELSIA', 'cod_activo__3': 1003, 'activo__3': 'CEMARGOS', 'cod_activo__4': 1004, 'activo__4': 'ECOPETROL', 'cod_activo__5': 1005, 'activo__5': 'ETB', 'cod_activo__6': 1007, 'activo__6': 'Fiducuenta', 'cod_activo__7': 1008, 'activo__7': 'Fidurenta', 'cod_activo__8': 1009, 'activo__8': 'Fondo Cerrado Renta Fija IV', 'cod_activo__9': 1010, 'activo__9': 'Fondo Cerrado Renta Fija V', 'cod_activo__10': 1011, 'activo__10': 'GRUBOLIVAR', 'cod_activo__11': 1012, 'activo__11': 'ISA', 'cod_activo__12': 1014, 'activo__12': 'PFBCOLOM', 'cod_activo__13': 1115, 'activo__13': 'PFCEMARGOS', 'cod_activo__14': 1016, 'activo__14': 'PFCORFICOL', 'cod_activo__15': 1017, 'activo__15': 'PFGRUPSURA', 'cod_activo__16': 1018, 'activo__16': 'Plan Semilla', 'cod_activo__17': 1019, 'activo__17': 'Renta Liquidez', 'cod_activo__18': 1020, 'activo__18': 'Sura Credito Privado'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-05-20 08:02:07,951 - INFO - Ended script for data loading

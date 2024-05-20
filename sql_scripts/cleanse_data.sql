@@ -25,10 +25,11 @@ WHERE
 
 -- crear una nueva entrada en catalogo_activos para observaciónes sin activos.
 INSERT INTO catalogo_activos(activo, cod_activo)
-VALUES ('SIN ACTIVO', 9999);
+VALUES ('SIN ACTIVO', 9999)
+ON CONFLICT (cod_activo) DO NOTHING;
 
 -- actualizar entradas donde cod_activo es nulo
-UPDATE staging_hist_aba_macroactivos
+UPDATE  staging_hist_aba_macroactivos
 SET cod_activo = '9999'
 WHERE cod_activo IS NULL;
 
@@ -143,7 +144,8 @@ FROM (
     WHERE cod_activo NOT IN (SELECT CAST(cod_activo AS VARCHAR(255)) from catalogo_activos));
     
 INSERT INTO catalogo_banca (cod_banca, banca)
-VALUES('XX', 'BANCA_DESCONOCIDA');
+VALUES('XX', 'BANCA_DESCONOCIDA')
+ON CONFLICT (cod_banca) DO NOTHING;
 
 UPDATE staging_hist_aba_macroactivos
 SET

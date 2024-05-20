@@ -6,25 +6,20 @@ from sqlalchemy import create_engine
 from dash import dcc, html
 from dash.dependencies import Input, Output
 
-# Leer archivo con la sentencia sql.
-query_file = 'GetData.sql'
+query_file = 'sql_scripts/retrieve_data.sql'
 with open(query_file, 'r') as file:
     sql_query = file.read()
 
-# Parametros de conección con la base de datos.
 db_user = 'admin'
 db_password = 'admin'
 db_host = 'localhost'
 db_port = '5432'
 db_name = 'inversiones'
 
-# Conexión a la base de datos.
 engine = create_engine(f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
 
-# Lectura de los datos desde la base de datos.
 df = pd.read_sql_query(sql_query, engine)
 
-# Preprocesar los datos
 df['date'] = pd.to_datetime(df[['year', 'month']].assign(day=1))
 
 app = dash.Dash(__name__)

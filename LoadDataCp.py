@@ -1,17 +1,17 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-# Database connection parameters
+# Parámetros de conexión (normalmente se configuran como variables de entorno).
 db_user = 'admin'
 db_password = 'admin'
-db_host = 'localhost'  # or your database host
-db_port = '5432'       # default PostgreSQL port
-db_name = 'ingestion_test'
+db_host = 'localhost'
+db_port = '5432'
+db_name = 'inversiones'
 
-# Create a database connection
+# Conexión con la base de datos.
 engine = create_engine(f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
 
-# Function to load a CSV file into a PostgreSQL table
+# Load to csv carga 
 def load_csv_to_db(csv_file, table_name):
     df = pd.read_csv(csv_file)
     df.to_sql(table_name, engine, if_exists='append', index=False)
