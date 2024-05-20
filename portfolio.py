@@ -19,7 +19,6 @@ db_name = 'inversiones'
 engine = create_engine(f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
 
 df = pd.read_sql_query(sql_query, engine)
-
 df['date'] = pd.to_datetime(df[['year', 'month']].assign(day=1))
 
 app = dash.Dash(__name__)
@@ -28,7 +27,7 @@ app.layout = html.Div([
     html.Div(
         dcc.Dropdown(
             id='client-dropdown',
-            options=[{'label': str(id), 'value': id} for id in df['id_sistema_cliente'].unique()],
+            options=[{'label': id, 'value': id} for id in df['id_sistema_cliente'].unique()],
             placeholder='Selecciona un cliente',
             style={'width': '50%', 'display':'inline-block'},
             searchable=True
@@ -64,63 +63,61 @@ app.layout = html.Div([
 )
 def update_graphs(selected_client):
     if not selected_client:
-        # Si no hay cliente seleccionado, mostrar las gráficas con el total de los datos
         
+        # Se muestran todos los datos cuando no hay cleinte seleccionado.
         last_date = df['date'].max()
         last_date_df = df[df['date'] == last_date]
 
-        # Gráfica de pastel para la última fecha disponible con todos los datos (macroactivo)
-        
+        # Gráfica de pastel para la distribución de aba en macroactivo.
         pie_chart_macroactivos = px.pie(last_date_df, names='macroactivo', values='aba',
                            title=f'Distribución de macroactivos para {last_date.strftime("%Y-%m")}')
                            
-        #Gráfica de pasteñ distribución activos
+        # Gráfica de pasteñ distribución de aba en activos.
         pie_chart_activos = px.pie(last_date_df, names='activo', values='aba',
                            title=f'Distribución de activos para {last_date.strftime("%Y-%m")}')
 
-        # Gráfica de pastel para la última fecha disponible con todos los datos (banca)
+        # Gráfica de pastel para la distribución de aba en banca.
         banca_pie_chart = px.pie(last_date_df, names='banca', values='aba',
                                  title=f'Distribución del portafolio por banca para {last_date.strftime("%Y-%m")}')
         
-        # Gráfica de pastel para la última fecha disponible con todos los datos (perfil de riesgo)
+        # Gráfica de pastel para la distribucióm de aba según perfil de riesgo.
         risk_pie_chart = px.pie(last_date_df, names='perfil_riesgo', values='aba',
                                 title=f'Distribución del perfil de riesgo para {last_date.strftime("%Y-%m")}')
         
-        # Gráfica de líneas con el total de aba de todos los clientes
+        # Gráfica de líneas con el total de aba de todos los clientes según el macroactivo.
         total_df = df.groupby(['date', 'macroactivo'], as_index=False)['aba'].sum()
         line_chart = px.line(total_df, x='date', y='aba', color='macroactivo',
                              title='Evolución del total de aba de todos los clientes a través del tiempo')
         
-        # Nueva gráfica de barras apiladas para la distribución de macroactivos por banca
+        # Gráfica de barras apiladas para la distribución de macroactivos por banca.
         macroactivo_banca_df = last_date_df.groupby(['banca', 'macroactivo'], as_index=False)['aba'].sum()
         bar_chart_bank = px.bar(macroactivo_banca_df, x='banca', y='aba', color='macroactivo', 
                            title='Distribución de macroactivos por banca', barmode='stack')
                            
-        # Nueva gráfica de barras apiladas para la dostrobucion de macroactivos por riesgo
+        # Gráfica de barras apiladas para la dostrobucion de macroactivos por riesgo.
         macroactivo_riesgo_df = last_date_df.groupby(['perfil_riesgo', 'macroactivo'], as_index=False)['aba'].sum()
         bar_chart_risk = px.bar(macroactivo_riesgo_df, x='perfil_riesgo', y='aba', color='macroactivo', 
                            title='Distribución de macroactivos por banca', barmode='stack')
 
     else:
-        # Filtrar los datos para el cliente seleccionado
+        # Filtrar los datos para el cliente seleccionado.
         client_df = df[df['id_sistema_cliente'] == selected_client]
         last_date = client_df['date'].max()
         last_date_df = client_df[client_df['date'] == last_date]
 
-        # Gráfica de pastel para la última fecha disponible del cliente seleccionado (macroactivo)
-        
+        # Gráfica de pastel para la distribución de aba en macroactivos.
         pie_chart_macroactivos = px.pie(last_date_df, names='macroactivo', values='aba',
                            title=f'Portafolio del cliente {selected_client} para {last_date.strftime("%Y-%m")}')
         
-        # Gráfica de pastel para la última fecha disponible del cliente seleccionado.
+        # Gráfica de pastel para la distribución de aba en activos
         pie_chart_activos = px.pie(last_date_df, names='activo', values='aba',
                            title=f'Distribución de activos para {last_date.strftime("%Y-%m")}')
         
-        # Gráfica de pastel para la última fecha disponible del cliente seleccionado (banca).
+        # Gráfica de pastel para la distribución de aba en banca
         banca_pie_chart = px.pie(last_date_df, names='banca', values='aba',
                                  title=f'Distribución del portafolio por banca del cliente {selected_client} para {last_date.strftime("%Y-%m")}')
         
-        # Gráfica de pastel para la última fecha disponible del cliente seleccionado (perfil de riesgo).
+        # Gráfica de pastel para la distribución de aba según perfil de riesgo.
         risk_pie_chart = px.pie(last_date_df, names='perfil_riesgo', values='aba',
                                 title=f'Distribución del perfil de riesgo del cliente {selected_client} para {last_date.strftime("%Y-%m")}')
         

@@ -180,8 +180,11 @@ SET month =
     END;
 
 DELETE FROM staging_hist_aba_macroactivos
-WHERE id_sistema_cliente = '100';
+WHERE id_sistema_cliente = '100'
+    OR id_sistema_cliente IS NULL;
 
 INSERT INTO public.historico_aba_macroactivos (ingestion_year, ingestion_month, ingestion_day, id_sistema_cliente, macroactivo, cod_activo, aba, cod_perfil_riesgo, cod_banca, year, month)
 SELECT CAST(ingestion_year AS INTEGER), CAST(ingestion_month AS INTEGER), CAST(ingestion_day AS INTEGER), id_sistema_cliente, macroactivo, CAST(cod_activo AS INTEGER), aba, CAST(cod_perfil_riesgo AS INTEGER), cod_banca, CAST(year AS INTEGER), CAST(month AS INTEGER)
 FROM public.staging_hist_aba_macroactivos;
+
+DROP TABLE IF EXISTS staging_hist_aba_macroactivos;

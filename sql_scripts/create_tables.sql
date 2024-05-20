@@ -33,3 +33,20 @@ CREATE TABLE IF NOT EXISTS historico_aba_macroactivos (
     FOREIGN KEY (cod_perfil_riesgo) REFERENCES cat_perfil_riesgo (cod_perfil_riesgo),
     FOREIGN KEY (cod_banca) REFERENCES catalogo_banca (cod_banca)
 );
+
+-- crear tabla para staging
+DROP TABLE IF EXISTS staging_hist_aba_macroactivos;
+
+CREATE TABLE staging_hist_aba_macroactivos (
+    ingestion_year VARCHAR(255),
+    ingestion_month VARCHAR(255),
+    ingestion_day VARCHAR(255),
+    id_sistema_cliente VARCHAR(255),
+    macroactivo VARCHAR(255),
+    cod_activo VARCHAR(255),
+    aba VARCHAR(255),
+    cod_perfil_riesgo VARCHAR(255),
+    cod_banca VARCHAR(255),
+    year VARCHAR(255),
+    month VARCHAR(255)
+);

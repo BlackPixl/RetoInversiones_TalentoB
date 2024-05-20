@@ -7,3 +7,23 @@ DETAIL:  Key (cod_activo)=(1000) already exists.
 [parameters: {'cod_activo__0': 1000, 'activo__0': 'CDT BANCOLOMBIA B360', 'cod_activo__1': 1001, 'activo__1': 'CDT TUYA TF B360', 'cod_activo__2': 1002, 'activo__2': 'CELSIA', 'cod_activo__3': 1003, 'activo__3': 'CEMARGOS', 'cod_activo__4': 1004, 'activo__4': 'ECOPETROL', 'cod_activo__5': 1005, 'activo__5': 'ETB', 'cod_activo__6': 1007, 'activo__6': 'Fiducuenta', 'cod_activo__7': 1008, 'activo__7': 'Fidurenta', 'cod_activo__8': 1009, 'activo__8': 'Fondo Cerrado Renta Fija IV', 'cod_activo__9': 1010, 'activo__9': 'Fondo Cerrado Renta Fija V', 'cod_activo__10': 1011, 'activo__10': 'GRUBOLIVAR', 'cod_activo__11': 1012, 'activo__11': 'ISA', 'cod_activo__12': 1014, 'activo__12': 'PFBCOLOM', 'cod_activo__13': 1115, 'activo__13': 'PFCEMARGOS', 'cod_activo__14': 1016, 'activo__14': 'PFCORFICOL', 'cod_activo__15': 1017, 'activo__15': 'PFGRUPSURA', 'cod_activo__16': 1018, 'activo__16': 'Plan Semilla', 'cod_activo__17': 1019, 'activo__17': 'Renta Liquidez', 'cod_activo__18': 1020, 'activo__18': 'Sura Credito Privado'}]
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
 2024-05-20 08:02:07,951 - INFO - Ended script for data loading
+2024-05-20 08:33:53,734 - INFO - Started script for table creation
+2024-05-20 08:33:54,378 - INFO - Execution successful
+2024-05-20 08:33:54,379 - INFO - Ended script for table creation
+2024-05-20 08:33:57,612 - INFO - Data loading successful
+2024-05-20 08:33:57,612 - INFO - Ended script for data loading
+2024-05-20 08:35:39,038 - INFO - Started script for table creation
+2024-05-20 08:35:39,522 - INFO - Execution successful
+2024-05-20 08:35:39,523 - INFO - Ended script for table creation
+2024-05-20 08:35:42,669 - INFO - Data loading successful
+2024-05-20 08:35:42,669 - INFO - Ended script for data loading
+2024-05-20 08:38:37,515 - INFO - Started script for table creation
+2024-05-20 08:38:37,903 - INFO - Execution successful
+2024-05-20 08:38:37,904 - INFO - Ended script for table creation
+2024-05-20 08:38:41,745 - INFO - Data loading successful
+2024-05-20 08:38:41,745 - INFO - Ended script for data loading
+2024-05-20 09:06:51,095 - INFO - Started script for table creation
+2024-05-20 09:06:51,541 - INFO - Execution successful
+2024-05-20 09:06:51,541 - INFO - Ended script for table creation
+2024-05-20 09:06:55,623 - INFO - Data loading successful
+2024-05-20 09:06:55,624 - INFO - Ended script for data loading
